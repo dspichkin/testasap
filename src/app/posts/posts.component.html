@@ -1,0 +1,13 @@
+<myheader></myheader>
+
+<h2>
+  Component posts
+</h2>
+<ul>
+  <li ng-repeat="post in $ctrl.posts.data" style="list-style-type: none;">
+    <p><strong>{{post.title}}</strong></p>
+    <p>{{post.body | limitTo:$ctrl.longNumberLimit }} 
+      <a ui-sref="post({ id: post.id })">{{post.body.length > $ctrl.longNumberLimit ? '...' : ''}}</a>
+    </p>
+  </li>
+</ul>
